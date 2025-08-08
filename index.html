@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shekhinah Experience - Divine Encounter</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./assets/pictures/shknahlogo.png">
+    <link rel="stylesheet" href="./shknah.css" />
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div class="preloader">
+      <!-- <div class="loader"></div> -->
+      <img src="./assets/pictures/shknahlogo.png" alt="" class="loader" />
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+      <img
+        src="./assets/pictures/shknahlogo.png"
+        alt="Shekhinah Logo"
+        class="logo-img"
+      />
+      <div class="nav-links">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#video" class="nav-link">Video</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <div class="close-menu" id="close-menu">
+        <i class="fas fa-times"></i>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="#" class="mobile-nav-link">Home</a>
+        <a href="#video" class="mobile-nav-link">Video</a>
+        <a href="#gallery" class="mobile-nav-link">Gallery</a>
+        <a href="#contact" class="mobile-nav-link">Contact</a>
+      </div>
+      <div class="mobile-footer-links">
+        <a href="#" class="mobile-footer-link">About</a>
+        <!-- <a href="#" class="mobile-footer-link">Events</a> -->
+        <a href="#testimonies" class="mobile-footer-link">Testimonies</a>
+        <a href="https://wa.me/2348108712374" class="mobile-footer-link"
+          >WhatsApp</a
+        >
+      </div>
+    </div>
+
+    <header class="parallax-header">
+      <div class="particles" id="particles"></div>
+
+      <div class="header-content">
+        <div class="gold-divider"></div>
+
+        <div class="highlight-box">
+          <h3 class="event-title">SIX HOURS PRAYER CHARGE</h3>
+          <div class="minister" style="margin: -200px;">THEME:</div>
+
+          <div class="themes">
+            <div class="theme animate__animated animate__fadeInLeft">
+              SUBDUE
+            </div>
+            <div class="theme animate__animated animate__fadeInUp">
+              AND HAVE
+            </div>
+            <div class="theme animate__animated animate__fadeInRight">
+              DOMINION
+            </div>
+          </div>
+
+          <div class="location">
+            ASSEMBLIES OF GOD CHURCH GIDAN MANGORO,<br />
+            OPPOSITE HOSPITAL JUNCTION,<br />
+            ALONG JIKWOYI OROZO HIGHWAY
+          </div>
+
+          <div class="date-time">16th AUG 2025 | 12:00PM</div>
+          <div class="countdown-container" id="countdown">
+            <div class="countdown-box">
+              <div class="countdown-value" id="days">00</div>
+              <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-box">
+              <div class="countdown-value" id="hours">00</div>
+              <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-box">
+              <div class="countdown-value" id="minutes">00</div>
+              <div class="countdown-label">Minutes</div>
+            </div>
+            <div class="countdown-box">
+              <div class="countdown-value" id="seconds">00</div>
+              <div class="countdown-label">Seconds</div>
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+
+      <div
+        class="scroll-down"
+        onclick="document.querySelector('.video-section').scrollIntoView({behavior: 'smooth'})"
+      >
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </header>
+
+    <section class="section video-section" id="video">
+      <div class="container">
+        <h2 class="section-title">SPECIAL INVITATION</h2>
+
+        <div class="video-container">
+          <div class="video-wrapper">
+            <iframe
+              id="video-player"
+              src="./assets/videos/shknah.MP4"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video-overlay" id="video-overlay">
+            <div class="play-btn" id="play-btn">
+              <i class="fas fa-play"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="container">
+        <h2 class="section-title">GALLERY</h2>
+
+        <div class="gallery">
+          <div
+            class="gallery-item scroll-animate"
+            data-type="image"
+            data-src="./assets/pictures/shekhinah.JPG"
+          >
+            <img
+              src="./assets/pictures/shekhinah.JPG"
+              alt="Shekhinah Experience"
+            />
+            <div class="gallery-caption">Shekhinah Experience 2025</div>
+            <div class="gallery-hover">
+              <i class="fas fa-expand"></i>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item scroll-animate"
+            data-type="video"
+            data-src="./assets/videos/shknah2-video.MP4"
+          >
+            <video muted loop playsinline>
+              <source
+                src="./assets/videos/shknah2-video.MP4"
+                type="video/mp4"
+              />
+              Your browser deoes not support the video tag.
+            </video>
+            <div class="gallery-caption">Shekhinah Experience Highlights</div>
+            <div class="gallery-hover">
+              <i class="fas fa-play"></i>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item scroll-animate"
+            data-type="image"
+            data-src="./assets/pictures/prayerSessions.JPG"
+          >
+            <img
+              src="./assets/pictures/prayerSessions.JPG"
+              alt="Prayer Sessions"
+            />
+            <div class="gallery-caption">Powerful Prayer Sessions</div>
+            <div class="gallery-hover">
+              <i class="fas fa-expand"></i>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item scroll-animate"
+            data-type="image"
+            data-src="./assets/pictures/BibleStudy.JPG"
+          >
+            <img
+              src="./assets/pictures/worshipSessions.JPG"
+              alt="Worship Session"
+            />
+            <div class="gallery-caption">Anointed Worship Sessions</div>
+            <div class="gallery-hover">
+              <i class="fas fa-expand"></i>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item scroll-animate"
+            data-type="image"
+            data-src="./assets/pictures/BibleStudy.JPG"
+          >
+            <img src="./assets/pictures/BibleStudy.JPG" alt="Bible Study" />
+            <div class="gallery-caption">BIble Study</div>
+            <div class="gallery-hover">
+              <i class="fas fa-expand"></i>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item scroll-animate"
+            data-type="image"
+            data-src="./assets/pictures/ministrations.jpg"
+          >
+            <img
+              src="./assets/pictures/ministrations.JPG"
+              alt="ministrations"
+            />
+            <div class="gallery-caption">Anointed Impartation Sessions</div>
+            <div class="gallery-hover">
+              <i class="fas fa-expand"></i>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item scroll-animate"
+            data-type="video"
+            data-src="./assets/videos/apostleMsax.MP4"
+          >
+            <video muted loop>
+              <source
+                src="./assets/videos/apostleMsax.MP4"
+                type="video/mp4"
+              />
+            </video>
+            <div class="gallery-caption">Special Ministration</div>
+            <div class="gallery-hover">
+              <i class="fas fa-play"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Modal -->
+    <div class="gallery-modal" id="gallery-modal">
+      <span class="close-modal">&times;</span>
+      <div class="modal-content"></div>
+      <div class="modal-nav">
+        <button class="nav-btn prev-btn">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="nav-btn next-btn">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Testimonies Section -->
+    <section class="section testimonies-section" id="testimonies">
+      <div class="container">
+        <h2 class="section-title">POWERFUL TESTIMONIES</h2>
+        <p class="section-subtitle">
+          What people are saying about Shekhinah Experience
+        </p>
+
+        <div class="testimonies-container">
+          <div class="testimony-card scroll-animate">
+            <div class="testimony-content">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="testimony-text">
+                I received more insights and was able to break into a realm
+                where I have not ben before and received understanding on the
+                paths towards intimacy between a man and God.
+              </p>
+              <div class="testimony-author">
+                <img
+                  src="./assets/pictures/Prophet Emmanuel.jpg"
+                  alt="Bro Emmanuel Ikwegbwu"
+                  class="author-img"
+                />
+                <div class="author-info">
+                  <h4>Brother Emmanuel Ikwuegbwu</h4>
+                  <p>Minister</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimony-card scroll-animate">
+            <div class="testimony-content">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="testimony-text">
+                It was a lot to take in. It truly felt like a new beginning. I
+                came with so many questions..deep ones, especially about past
+                experiences. But I didn’t leave empty. I went home with
+                answers... and an even more powerful encounter with the Spirit
+                of the Lord than I had ever known before. It was also my very
+                first prayer-and-power-filled program since coming to Abuja and
+                I have no regrets. Only gratitude.
+              </p>
+              <div class="testimony-author">
+                <img
+                  src="./assets/pictures/choristerMary.jpg"
+                  alt="sister Mary on Glasses"
+                  class="author-img"
+                />
+                <div class="author-info">
+                  <h4>Sister Mary Akinyode</h4>
+                  <p>Chorister</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimony-card scroll-animate">
+            <div class="testimony-content">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="testimony-text">
+                The presence of the Lord was undeniably felt. There was a deep
+                stirring, a realization of many things. Truths were revealed,
+                hearts were awakened. Some moments defy explanation... What
+                happened here was beyond words. But one thing is certain: God
+                was present.
+              </p>
+              <div class="testimony-author">
+                <img
+                  src="./assets/pictures/Sis Debby2.JPG"
+                  alt="Sister Chukwuokike Deborah Chizobam"
+                  class="author-img"
+                />
+                <div class="author-info">
+                  <h4>Sister Deborah Chizobam</h4>
+                  <p>Chorister</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimony-card scroll-animate">
+            <div class="testimony-content">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="testimony-text">
+                The prophetic words spoken over my life at Shekhinah Experience
+                began manifesting immediately.I learned about how and why we
+                must walk in Dominion, and since then I have not stopped basking
+                in God's unfailing Love and Gracious supernatural mercies. The
+                Shekhinah Experience is a must-attend for anyone seeking a
+                deeper relationship with God.
+              </p>
+              <div class="testimony-author">
+                <img
+                  src="./assets/pictures/brother David.jpg"
+                  alt="David Ayozie"
+                  class="author-img"
+                />
+                <div class="author-info">
+                  <h4>Brother David Ayozie</h4>
+                  <p>Minister</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonies-cta">
+          <p>Have a testimony to share?</p>
+          <a
+            href="https://wa.me/2347063876483"
+            target="_blank"
+            class="testimony-btn"
+            rel="noopener noreferrer"
+          >
+            <i class="fab fa-whatsapp"></i> Share Your Story
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer id="contact">
+      <div class="footer-content">
+        <div class="footer-logo">
+          SHEKHINAH <span style="color: #ffff">EXPERIENCE</span>
+        </div>
+
+        <!-- <div class="footer-links">
+                <a href="#" class="footer-link">Home</a>
+                <a href="#video" class="footer-link">Video</a>
+                <a href="#gallery" class="footer-link">Gallery</a>
+                <a href="#contact" class="footer-link">Contact</a>
+            </div> -->
+        <button class="contact-btn">
+          <i class="fab fa-whatsapp whatsapp-icon"></i>
+          <a
+            href="https://wa.me/2347063876483"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="color: var(--light)"
+          >
+            Contact via WhatsApp: +234 706 387 6483
+          </a>
+          or
+          <a
+            href="https://wa.me/2348139502961"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="color: var(--light)"
+          >
+            +234 813 950 2961
+          </a>
+        </button>
+
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          <a
+            href="https://wa.me/2347063876483 "
+            class="whatsApp-social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="fab fa-whatsapp"></i
+          ></a>
+        </div>
+
+        <div class="copyright">
+          &copy; 2025 Shekhinah Experience. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Dont question my code,lol...Each comment is for a purpose, and only developers would understand, shalom..and God bless you-->
+    <div class="social-modal" id="social-modal">
+      <div class="social-modal-content">
+        <span class="close-social-modal">&times;</span>
+        <h3>Coming Soon!</h3>
+        <p>
+          We'll be available on social media platforms soon. For now, you can
+          contact us via WhatsApp.
+        </p>
+        <a
+          href="https://wa.me/2348108712374"
+          class="whatsapp-redirect-btn"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <i class="fab fa-whatsapp"></i> Contact Us on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <script src="/shknah.js"></script>
+  </body>
+</html>
