@@ -39,7 +39,7 @@ function setupVideo() {
   const pauseBtn = document.getElementById("pause-btn");
   const video = document.getElementById("video-player");
   const videoWrapper = document.querySelector('.video-wrapper');
-  f
+  
   // Always show play button initially
   overlay.classList.remove("hidden");
   let userHasInteracted = false;
