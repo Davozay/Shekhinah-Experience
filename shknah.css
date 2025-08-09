@@ -1420,3 +1420,89 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+
+
+
+/* Add this to your existing CSS */
+
+/* Mobile Crowns - Show on small screens */
+@media (max-width: 768px) {
+  .crown {
+    /* Show crowns but make them smaller and positioned differently */
+    position: absolute;
+    flex-direction: row;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    opacity: 0.5;
+    z-index: 2;
+    animation: float-crown-mobile 3s infinite ease-in-out;
+  }
+
+  .crown-left {
+    top: 20px;
+    left: 20px;
+    right: auto;
+    margin: 0;
+    align-items: flex-start;
+  }
+
+  .crown-right {
+    top: 20px;
+    right: 20px;
+    left: auto;
+    margin: 0;
+    align-items: flex-end;
+  }
+
+  .crown i {
+    transform: rotate(-10deg);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+
+  
+  .invitation-crown {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+
+  .invitation-crown .crown {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    margin: 0;
+  }
+
+  @keyframes float-crown-mobile {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .section-title::before,
+  .section-title::after {
+    content: '\f521'; /* Crown icon */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--secondary);
+    font-size: 1.2rem;
+    opacity: 0.7;
+    animation: float-crown-mobile 3s infinite;
+  }
+
+  .section-title::after {
+    animation-delay: 0.5s;
+  }
+}
+
+
