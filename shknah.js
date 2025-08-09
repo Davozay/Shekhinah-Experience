@@ -1,4 +1,4 @@
-// Preloaderr init
+// Preloader init
 window.addEventListener("load", function () {
   const preloader = document.querySelector(".preloader");
   setTimeout(() => {
@@ -6,7 +6,7 @@ window.addEventListener("load", function () {
     setTimeout(() => {
       preloader.style.display = "none";
     }, 500);
-  }, 2);
+  }, 5000);
 });
 
 function createParticles() {
@@ -33,59 +33,9 @@ function createParticles() {
   }
 }
 
-function setupVideo() {
-  const overlay = document.getElementById("video-overlay");
-  const playBtn = document.getElementById("play-btn");
-  const pauseBtn = document.getElementById("pause-btn");
-  const video = document.getElementById("video-player");
-  const videoWrapper = document.querySelector('.video-wrapper');
-  
-  // Always show play button initially
-  overlay.classList.remove("hidden");
-  let userHasInteracted = false;
-
-  // Play button click handler
-  playBtn.addEventListener("click", function() {
-    video.play()
-      .then(() => {
-        videoWrapper.classList.add('video-playing');
-        userHasInteracted = true;
-      })
-      .catch(e => {
-        console.log("Video play prevented:", e);
-      });
-  });
-
-  // Pause button click handler
-  pauseBtn.addEventListener("click", function() {
-    video.pause();
-    videoWrapper.classList.remove('video-playing');
-    overlay.classList.remove("hidden");
-  });
-
-  // When video ends
-  video.addEventListener('ended', () => {
-    videoWrapper.classList.remove('video-playing');
-    overlay.classList.remove("hidden");
-  });
-
-  // Intersection Observer for scroll behavior
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting && userHasInteracted) {
-        video.pause();
-        videoWrapper.classList.remove('video-playing');
-        overlay.classList.remove("hidden");
-      }
-    });
-  }, { threshold: 0.5 });
-
-  observer.observe(video);
-}
-
 function setupScrollAnimation() {
   const scrollElements = document.querySelectorAll(
-    ".section-title, .gallery-item, .video-container, .testimony-card"
+    ".section-title, .gallery-item, .invitation-container, .testimony-card"
   );
 
   const elementInView = (el) => {
@@ -135,13 +85,11 @@ function setupSocialModals() {
     });
   });
 
-  // Close this modal when X is clicked
   closeModalBtn.addEventListener("click", function () {
     socialModal.style.display = "none";
     document.body.style.overflow = "auto";
   });
 
-  // Close thisss modal when clicking outside content
   socialModal.addEventListener("click", function (e) {
     if (e.target === socialModal) {
       socialModal.style.display = "none";
@@ -157,7 +105,6 @@ function setupSocialModals() {
   });
 }
 
-// MMy  mobile Menu Toggle
 function setupMobileMenu() {
   const hamburger = document.getElementById("hamburger");
   const mobileMenu = document.getElementById("mobile-menu");
@@ -184,7 +131,6 @@ function setupMobileMenu() {
   });
 }
 
-//  Timer...
 function setupCountdown() {
   const eventDate = new Date("August 16, 2025 12:00:00").getTime();
 
@@ -220,7 +166,6 @@ function setupCountdown() {
   }, 1000);
 }
 
-// Gallery Modal Functionality...yesyes
 function setupGalleryModal() {
   const galleryItems = document.querySelectorAll(".gallery-item");
   const modal = document.getElementById("gallery-modal");
@@ -228,22 +173,6 @@ function setupGalleryModal() {
   const closeModal = modal.querySelector(".close-modal");
   const prevBtn = modal.querySelector(".prev-btn");
   const nextBtn = modal.querySelector(".next-btn");
-  const videos = document.querySelectorAll(".gallery-item video");
-
-  galleryItems.forEach((item) => {
-    if (item.dataset.type === "video") {
-      const video = item.querySelector("video");
-
-      item.addEventListener("mouseenter", () => {
-        video.play().catch((e) => console.log("Video play prevented:", e));
-      });
-
-      item.addEventListener("mouseleave", () => {
-        video.pause();
-        video.currentTime = 0;
-      });
-    }
-  });
 
   let currentIndex = 0;
   let items = [];
@@ -263,40 +192,10 @@ function setupGalleryModal() {
 
   function openModal(index) {
     const item = items[index];
-
-    if (item.type === "image") {
-      modalContent.innerHTML = `
-                <img src="${item.src}" alt="${item.caption}">
-                <div class="modal-caption">${item.caption}</div>
-            `;
-    } else if (item.type === "video") {
-      modalContent.innerHTML = `
-                <video controls autoplay>
-                    <source src="${item.src}" type="video/mp4">
-                </video>
-                <div class="modal-caption">${item.caption}</div>
-            `;
-      // Get the newly created video element
-      const modalVideo = modalContent.querySelector("video");
-
-      // When modal closes, pause the video
-      modal.addEventListener("click", function handler(e) {
-        if (e.target === modal) {
-          modalVideo.pause();
-          modal.removeEventListener("click", handler);
-        }
-      });
-    }
-
-    modal.style.display = "block";
-    document.body.style.overflow = "hidden";
-
-    // Pause any gallery videos that might be playing
-    videos.forEach((video) => {
-      video.pause();
-      video.currentTime = 0;
-    });
-
+    modalContent.innerHTML = `
+      <img src="${item.src}" alt="${item.caption}">
+      <div class="modal-caption">${item.caption}</div>
+    `;
     modal.style.display = "block";
     document.body.style.overflow = "hidden";
   }
@@ -304,15 +203,8 @@ function setupGalleryModal() {
   function closeModalFunc() {
     modal.style.display = "none";
     document.body.style.overflow = "auto";
-
-    // This is to Pause any playing videos when closing whoever gets this code should just read and understand the concise code brother/sister in Christ, God bless you!
-    const videos = modalContent.querySelectorAll("video");
-    videos.forEach((video) => {
-      video.pause();
-    });
   }
 
-  // Navigation functions
   function showPrev() {
     currentIndex = (currentIndex - 1 + items.length) % items.length;
     openModal(currentIndex);
@@ -348,7 +240,6 @@ function setupGalleryModal() {
 
 document.addEventListener("DOMContentLoaded", function () {
   createParticles();
-  setupVideo();
   setupScrollAnimation();
   setupNavbar();
   setupMobileMenu();
