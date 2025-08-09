@@ -6,7 +6,7 @@ window.addEventListener("load", function () {
     setTimeout(() => {
       preloader.style.display = "none";
     }, 500);
-  }, 1500);
+  }, 2);
 });
 
 function createParticles() {
@@ -36,12 +36,51 @@ function createParticles() {
 function setupVideo() {
   const overlay = document.getElementById("video-overlay");
   const playBtn = document.getElementById("play-btn");
-  const iframe = document.getElementById("video-player");
+  const pauseBtn = document.getElementById("pause-btn");
+  const video = document.getElementById("video-player");
+  const videoWrapper = document.querySelector('.video-wrapper');
+  
+  // Always show play button initially
+  overlay.classList.remove("hidden");
+  let userHasInteracted = false;
 
-  playBtn.addEventListener("click", function () {
-    overlay.classList.add("hidden");
-    iframe.src = iframe.src + "?autoplay=1";
+  // Play button click handler
+  playBtn.addEventListener("click", function() {
+    video.play()
+      .then(() => {
+        videoWrapper.classList.add('video-playing');
+        userHasInteracted = true;
+      })
+      .catch(e => {
+        console.log("Video play prevented:", e);
+      });
   });
+
+  // Pause button click handler
+  pauseBtn.addEventListener("click", function() {
+    video.pause();
+    videoWrapper.classList.remove('video-playing');
+    overlay.classList.remove("hidden");
+  });
+
+  // When video ends
+  video.addEventListener('ended', () => {
+    videoWrapper.classList.remove('video-playing');
+    overlay.classList.remove("hidden");
+  });
+
+  // Intersection Observer for scroll behavior
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting && userHasInteracted) {
+        video.pause();
+        videoWrapper.classList.remove('video-playing');
+        overlay.classList.remove("hidden");
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(video);
 }
 
 function setupScrollAnimation() {
@@ -88,7 +127,6 @@ function setupSocialModals() {
     '.social-link:not(.social-link[href*="whatsapp"])'
   );
 
-   
   socialLinks.forEach((link) => {
     link.addEventListener("click", function (e) {
       e.preventDefault();

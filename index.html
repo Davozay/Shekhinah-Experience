@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="./assets/pictures/shknahlogo.png">
+    <link rel="icon" href="./assets/pictures/shknahlogo.png" />
     <link rel="stylesheet" href="./shknah.css" />
   </head>
   <body>
@@ -76,7 +76,7 @@
 
         <div class="highlight-box">
           <h3 class="event-title">SIX HOURS PRAYER CHARGE</h3>
-          <div class="minister" style="margin: -200px;">THEME:</div>
+          <div class="minister" style="margin: -200px">THEME:</div>
 
           <div class="themes">
             <div class="theme animate__animated animate__fadeInLeft">
@@ -115,8 +115,6 @@
               <div class="countdown-label">Seconds</div>
             </div>
           </div>
-
-          
         </div>
       </div>
 
@@ -134,20 +132,35 @@
 
         <div class="video-container">
           <div class="video-wrapper">
-            <iframe
+            <video
               id="video-player"
-              src="./assets/videos/shknah.MP4"
-              allowfullscreen
-            ></iframe>
+              poster="./assets/pictures/shknah_main_vid.png"
+              playsinline
+              preload="metadata"
+            >
+              <source src="./assets/videos/shknah.MP4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay" id="video-overlay">
+              <button class="play-btn" id="play-btn">
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+
+            <button class="pause-btn" id="pause-btn">
+              <i class="fas fa-pause"></i>
+            </button>
           </div>
-          <div class="video-overlay" id="video-overlay">
+        </div>
+      </div>
+    </section>
+    <!-- <div class="video-overlay" id="video-overlay">
             <div class="play-btn" id="play-btn">
               <i class="fas fa-play"></i>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </div> -->
 
     <section class="section" id="gallery">
       <div class="container">
@@ -250,10 +263,7 @@
             data-src="./assets/videos/apostleMsax.MP4"
           >
             <video muted loop>
-              <source
-                src="./assets/videos/apostleMsax.MP4"
-                type="video/mp4"
-              />
+              <source src="./assets/videos/apostleMsax.MP4" type="video/mp4" />
             </video>
             <div class="gallery-caption">Special Ministration</div>
             <div class="gallery-hover">
