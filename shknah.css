@@ -1503,6 +1503,23 @@ footer {
   .section-title::after {
     animation-delay: 0.5s;
   }
+
+
+
+  /* For better mobile crown visibility */
+
+  .crown i {
+    color: var(--secondary);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+  
+  /* Make sure crowns stand out against backgrounds */
+  .section-title::before,
+  .section-title::after {
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  }
+
+  
 }
 
 
