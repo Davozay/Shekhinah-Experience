@@ -1289,23 +1289,8 @@ footer {
     }
 
     .contact-btn {
-        flex-direction: column;
-        padding: 1.2rem 1rem;
+        padding: 1.2rem 2rem;
         font-size: 1rem;
-    }
-    [class*="meuve-man"]{
-        position: relative;
-        top: 1rem;
-        left: -165px;
-        /* margin-left: 500px; */
-
-    }
-    .contected-me{
-        position: relative;
-        top: -.6rem;
-        /* margin-bottom: 20px; */
-        left: 75px;
-        /* margin-left: 500px; */
     }
 
     .gallery {
